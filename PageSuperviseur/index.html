@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" media="screen" type="text/css" href="CSSPage.css" />
+    <script src="Scripts/jquery-3.5.1.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/popper.min.js"></script>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <title>Page Superviseur</title>
+    <script src="Demo.js"></script>
+</head>
+
+<body>
+    <br /><br /><br />
+    <h2 class="selection">Select your workgroup : </h2>
+    <br />
+    <div class="dropdown">
+        <div>
+            <select name="Groups" id="menugroup">
+                <option value="defaut">Script/Division</option>
+                <option value="G1">G1</option>
+                <option value="G2">G2</option>
+            </select>
+        </div>
+    </div>
+    <br /><br />
+    <h3 id="text">Informations Messages</h3>
+    <br /><br />
+          <div id="msgaff">
+              <h4>Message actif                            <input type="checkbox" id="chkbox" /></h4>
+              <br />
+              <h4>Message Texte                            <input type="text" placeholder="Texte du message" id="msgtexte"/></h4>
+              <br />
+              <h4>Message prédéfini                        <select name="predef" id="msgpredef"><option>Msg1</option><option>Msg2</option></select></h4>
+              <br /><br />
+              <h4>Attente avant débordement                <input type="text" placeholder="100" id="debor" /></h4>
+              <br />
+              <h4>Priorité des appels                      <select name="prio" id="prioappel"><option>0</option><option>1</option><option>2</option></select></h4>
+          </div>
+    
+    <br /><br />
+    <div class="center-div" style="padding: 0 0 0 200px">
+        <button type="button" class="btn btn-primary btn-lg" onclick="creerTable1()" >Reset</button>
+        <button type="button" class="btn btn-primary btn-lg" onclick="msgapply" >Apply</button>
+        <button type="button" class="btn btn-primary btn-lg" onclick="efftable()">Delete</button>
+    </div>
+    <br />
+    <h3 class="center-div" id="msg"></h3>
+    <br /><br />
+    <div id="tab"></div>
+    
+  
+</body>
+
+</html>
