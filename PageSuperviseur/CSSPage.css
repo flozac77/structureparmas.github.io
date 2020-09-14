@@ -64,6 +64,7 @@ th, td {
 }
 #msgtexte {
     margin-left: 160px;
+    width:300px;
 }
 #chkbox {
     margin-left: 170px;
