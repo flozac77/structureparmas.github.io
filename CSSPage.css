@@ -1,9 +1,72 @@
-﻿body
-{
+﻿
+.center-div {
+    margin: 0 auto;
+    width: 600px;
+    height:400px;
+    border-radius: 3px
+}
+
+.selection {
+    
+    font-family: Helvetica;
+    color: green;
+    text-align:center;
+}
+
+table {
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 300px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 15px;
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align:center;
+    font-family:Calibri;
+}
+
+#menugroup {
+    width: 400px;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+}
+
+#text{
+    text-align:center;
+}
+
+#applied {
+    font-size:30px;
+    text-align:center;
+}
+
+#msgaff{
+    padding: 0 0 0 650px;
+    text-justify:auto;
     
 }
 
-#selection{
-    font-family: Helvetica;
-    color:green;
+#debor {
+    width: 90px;
+    margin-left: 20px;
 }
+#prioappel{
+    margin-left:120px;
+}
+#msgpredef {
+    margin-left: 120px;
+}
+#msgtexte {
+    margin-left: 160px;
+    width:300px;
+}
+#chkbox {
+    margin-left: 170px;
+}
+
