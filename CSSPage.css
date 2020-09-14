@@ -46,10 +46,10 @@ th, td {
     text-align:center;
 }
 
-#msgaff{
+#msgaff {
     padding: 0 0 0 650px;
-    text-justify:auto;
-    
+    text-justify: auto;
+    font-family: sans-serif;
 }
 
 #debor {
