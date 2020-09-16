@@ -73,24 +73,19 @@ fetch("https://rltq36v83k.execute-api.eu-central-1.amazonaws.com/Integration/inc
     .then(result => console.log(result))
     .catch(error => console.log('error', error));
 */
-const proxyurl = "https://cors-anywhere.herokuapp.com/";
-const url = "https://rltq36v83k.execute-api.eu-central-1.amazonaws.com/Integration/incident-masse"; // site that doesn’t send Access-Control-*
-fetch( url, {
-    method: 'post',
-    headers: new Headers({
-        'Authorization': 'Bearer eyJraWQiOiJ4RGYxTzBlQVwvb1FYa2k1eFNvcXdOSDU2VFwvbjlTSkpoOEZSd3VzVFBUK2s9IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiIyZWM1MnUzbzMyNDFjZHViNWd1bnQ0dnNjZCIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoic25vdy1wdXJlY2xvdWRcL3JlYWQiLCJhdXRoX3RpbWUiOjE2MDAyNjIyNjUsImlzcyI6Imh0dHBzOlwvXC9jb2duaXRvLWlkcC5ldS1jZW50cmFsLTEuYW1hem9uYXdzLmNvbVwvZXUtY2VudHJhbC0xX2ZEaW9UQzMzYyIsImV4cCI6MTYwMDI2NTg2NSwiaWF0IjoxNjAwMjYyMjY1LCJ2ZXJzaW9uIjoyLCJqdGkiOiI0ODQwNDUzYi0yMWQ0LTRmMTMtODJhMC1lYWQ5Yzg4OTE0ZjgiLCJjbGllbnRfaWQiOiIyZWM1MnUzbzMyNDFjZHViNWd1bnQ0dnNjZCJ9.gcLhsrYahWqRU63str4YUcgx2KMkJxvRwQzPh5ZbZC8uYZSUIqqQ4I50ng4cZa1knxqH9tsSNePiAPlf97B3iDKhBc1i6233TSgh3dd-KuJ0jYNLvzRcFAdvuM7Kifxb5EQJI3dVqJERGvbWJKts5KN0zi12x6Kd9NrExKWdBfPZj9f-I4dlsGnEcpz1mJ-Pk6l29QAF6vmN8cJ2PZeKlA9WMzMrE6Vx4-tzBlM9nbcR_zFkYjlIYhzjxpjxPiXElDEq7d-kl2jmTYcm-5Kvo9W9ZEUtNaLd02u59Z58i8g0IzoELxe2vq-fFVIhuqw9udNGi_SuOuMipE9q9AmAsg',
-        'Content-Type': 'Access-Control-Allow-Origin'
-    }),
-    body: ''
-}) // https://cors-anywhere.herokuapp.com/https://example.com
-    .then(response => response.text())
-    .then(contents => console.log(contents))
-    .catch(() => console.log("Can’t access " + url + " response. Blocked by browser?"))
 
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
 
+xhr.addEventListener("readystatechange", function() {
+  if(this.readyState === 4) {
+    console.log(this.responseText);
+  }
+});
 
+xhr.open("POST", "https://rltq36v83k.execute-api.eu-central-1.amazonaws.com/Integration/incident-masse");
+xhr.setRequestHeader("Authorization", "Bearer eyJraWQiOiJ4RGYxTzBlQVwvb1FYa2k1eFNvcXdOSDU2VFwvbjlTSkpoOEZSd3VzVFBUK2s9IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiIyZWM1MnUzbzMyNDFjZHViNWd1bnQ0dnNjZCIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoic25vdy1wdXJlY2xvdWRcL3JlYWQiLCJhdXRoX3RpbWUiOjE2MDAyNjI5NTIsImlzcyI6Imh0dHBzOlwvXC9jb2duaXRvLWlkcC5ldS1jZW50cmFsLTEuYW1hem9uYXdzLmNvbVwvZXUtY2VudHJhbC0xX2ZEaW9UQzMzYyIsImV4cCI6MTYwMDI2NjU1MiwiaWF0IjoxNjAwMjYyOTUyLCJ2ZXJzaW9uIjoyLCJqdGkiOiIzOGJhMjg2Mi01NjlkLTRiN2MtYjkwNS1iNDg2OWI2YTA0MzMiLCJjbGllbnRfaWQiOiIyZWM1MnUzbzMyNDFjZHViNWd1bnQ0dnNjZCJ9.SV-2nonk1sEa0XS2MNpYgsoBjlg1BrUFl9aojOaF8Dlxk7bBcIwDK9hTSxkHr6qLfdW6NtR-6WelgwRaos1r4QTDWMf9DCNDH5jUXH-HfMUYGwJ2zrngWeBiuyG4ffmNTu2AgBAQq6yV77x0tq3o5vTcKTrd-lG8FbdJ2tpd8BUIkP1sbWvXhfsV0Z3tPppUZZz2BOoBAUXZ9GLu_ln7IZjR-qtxomYj9qVJJKYG_yV20rvsfJLA9bGdtgNGZccAshqkCWUpO8oCgL2f_FD_x0M8QRQIj42sH6XnrxtcHUz1S4emF6OFy6nH-2LmzgIB3ZTvLguO0sXeg1jt4ldkmg");
+xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
 
-
-
-
+xhr.send();
 
