@@ -79,7 +79,7 @@ fetch( url, {
     method: 'post',
     headers: new Headers({
         'Authorization': 'Bearer eyJraWQiOiJ4RGYxTzBlQVwvb1FYa2k1eFNvcXdOSDU2VFwvbjlTSkpoOEZSd3VzVFBUK2s9IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiIyZWM1MnUzbzMyNDFjZHViNWd1bnQ0dnNjZCIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoic25vdy1wdXJlY2xvdWRcL3JlYWQiLCJhdXRoX3RpbWUiOjE2MDAyNjIyNjUsImlzcyI6Imh0dHBzOlwvXC9jb2duaXRvLWlkcC5ldS1jZW50cmFsLTEuYW1hem9uYXdzLmNvbVwvZXUtY2VudHJhbC0xX2ZEaW9UQzMzYyIsImV4cCI6MTYwMDI2NTg2NSwiaWF0IjoxNjAwMjYyMjY1LCJ2ZXJzaW9uIjoyLCJqdGkiOiI0ODQwNDUzYi0yMWQ0LTRmMTMtODJhMC1lYWQ5Yzg4OTE0ZjgiLCJjbGllbnRfaWQiOiIyZWM1MnUzbzMyNDFjZHViNWd1bnQ0dnNjZCJ9.gcLhsrYahWqRU63str4YUcgx2KMkJxvRwQzPh5ZbZC8uYZSUIqqQ4I50ng4cZa1knxqH9tsSNePiAPlf97B3iDKhBc1i6233TSgh3dd-KuJ0jYNLvzRcFAdvuM7Kifxb5EQJI3dVqJERGvbWJKts5KN0zi12x6Kd9NrExKWdBfPZj9f-I4dlsGnEcpz1mJ-Pk6l29QAF6vmN8cJ2PZeKlA9WMzMrE6Vx4-tzBlM9nbcR_zFkYjlIYhzjxpjxPiXElDEq7d-kl2jmTYcm-5Kvo9W9ZEUtNaLd02u59Z58i8g0IzoELxe2vq-fFVIhuqw9udNGi_SuOuMipE9q9AmAsg',
-        'Content-Type': 'application/x-www-form-urlencoded'
+        'Content-Type': 'Access-Control-Allow-Origin'
     }),
     body: ''
 }) // https://cors-anywhere.herokuapp.com/https://example.com
