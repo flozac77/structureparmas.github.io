@@ -75,19 +75,15 @@ fetch("https://rltq36v83k.execute-api.eu-central-1.amazonaws.com/Integration/inc
 */
 
 
-const userAction = async () => {
-  const response = await fetch('https://rltq36v83k.execute-api.eu-central-1.amazonaws.com/Integration/incident-masse', {
-    method: 'POST',
-    body: "", // string or object
-    headers: {
-      'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Methods': 'GET, POST, PATCH, PUT, DELETE, OPTIONS',
-      'Access-Control-Allow-Headers': 'Origin, Content-Type, X-Auth-Token'
-    }
-  });
-  const myJson = await response.json(); //extract JSON from the http response
-  return myJson;
+function getList(){
+	return fetch(URL)
+    .then((response) => {
+        return response.json();
+    })
+    .then((json) => {
+    	console.log('flozac :' + json)
+		//conv.ask("juste pour montrer car l'api n'est pas fini : "+ listWorkgroup);
+    });
 }
-const globalData = userAction(); 
-console.log('flozac :' + globalData)
+getList();
+
