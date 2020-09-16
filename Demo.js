@@ -86,9 +86,9 @@ xhr.addEventListener("readystatechange", function() {
 xhr.open("POST", "https://rltq36v83k.execute-api.eu-central-1.amazonaws.com/Integration/incident-masse");
 xhr.setRequestHeader("Authorization", "Bearer eyJraWQiOiJ4RGYxTzBlQVwvb1FYa2k1eFNvcXdOSDU2VFwvbjlTSkpoOEZSd3VzVFBUK2s9IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiIyZWM1MnUzbzMyNDFjZHViNWd1bnQ0dnNjZCIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoic25vdy1wdXJlY2xvdWRcL3JlYWQiLCJhdXRoX3RpbWUiOjE2MDAyNjI5NTIsImlzcyI6Imh0dHBzOlwvXC9jb2duaXRvLWlkcC5ldS1jZW50cmFsLTEuYW1hem9uYXdzLmNvbVwvZXUtY2VudHJhbC0xX2ZEaW9UQzMzYyIsImV4cCI6MTYwMDI2NjU1MiwiaWF0IjoxNjAwMjYyOTUyLCJ2ZXJzaW9uIjoyLCJqdGkiOiIzOGJhMjg2Mi01NjlkLTRiN2MtYjkwNS1iNDg2OWI2YTA0MzMiLCJjbGllbnRfaWQiOiIyZWM1MnUzbzMyNDFjZHViNWd1bnQ0dnNjZCJ9.SV-2nonk1sEa0XS2MNpYgsoBjlg1BrUFl9aojOaF8Dlxk7bBcIwDK9hTSxkHr6qLfdW6NtR-6WelgwRaos1r4QTDWMf9DCNDH5jUXH-HfMUYGwJ2zrngWeBiuyG4ffmNTu2AgBAQq6yV77x0tq3o5vTcKTrd-lG8FbdJ2tpd8BUIkP1sbWvXhfsV0Z3tPppUZZz2BOoBAUXZ9GLu_ln7IZjR-qtxomYj9qVJJKYG_yV20rvsfJLA9bGdtgNGZccAshqkCWUpO8oCgL2f_FD_x0M8QRQIj42sH6XnrxtcHUz1S4emF6OFy6nH-2LmzgIB3ZTvLguO0sXeg1jt4ldkmg");
 xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-xhr.setRequestHeader('Access-Control-Allow-Origin: *');
-xhr.setRequestHeader('Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS');
-xhr.setRequestHeader('Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token');
+xhr.setRequestHeader('Access-Control-Allow-Origin','*');
+xhr.setRequestHeader('Access-Control-Allow-Methods','GET, POST, PATCH, PUT, DELETE, OPTIONS');
+xhr.setRequestHeader('Access-Control-Allow-Headers','Origin, Content-Type, X-Auth-Token');
 
 xhr.send();
 
