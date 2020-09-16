@@ -64,7 +64,7 @@ postRequest('https://rltq36v83k.execute-api.eu-central-1.amazonaws.com/Integrati
 
 function postRequest(url, data) {
   return fetch(url, {
-    credentials: 'same-origin', // 'include', default: 'omit'
+    credentials: 'include', // 'include', default: 'omit'
     method: 'POST', // 'GET', 'PUT', 'DELETE', etc.
     body: JSON.stringify(data), // Coordinate the body type with 'Content-Type'
     headers: new Headers({
