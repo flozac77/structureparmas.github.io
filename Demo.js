@@ -92,3 +92,17 @@ xhr.setRequestHeader('Access-Control-Allow-Headers','Origin, Content-Type, X-Aut
 
 xhr.send();
 
+
+const userAction = async () => {
+  const response = await fetch('https://rltq36v83k.execute-api.eu-central-1.amazonaws.com/Integration/incident-masse', {
+    method: 'POST',
+    body: "", // string or object
+    headers: {
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, POST, PATCH, PUT, DELETE, OPTIONS',
+      'Access-Control-Allow-Headers': 'Origin, Content-Type, X-Auth-Token'
+    }
+  });
+  const myJson = await response.json(); //extract JSON from the http response
+}
