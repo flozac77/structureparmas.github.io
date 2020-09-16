@@ -87,4 +87,5 @@ const userAction = async () => {
     }
   });
   const myJson = await response.json(); //extract JSON from the http response
+  console.log('flozac :' + myJson)
 }
