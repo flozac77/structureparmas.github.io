@@ -64,11 +64,11 @@ postRequest('https://rltq36v83k.execute-api.eu-central-1.amazonaws.com/Integrati
 
 function postRequest(url, data) {
   return fetch(url, {
-    credentials: 'include', // 'include', default: 'omit'
     method: 'POST', // 'GET', 'PUT', 'DELETE', etc.
     body: JSON.stringify(data), // Coordinate the body type with 'Content-Type'
     headers: new Headers({
       'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': 'https://helplineudj.github.io/structureparmas.github.io/'
       'Authorization': 'Bearer eyJraWQiOiJ4RGYxTzBlQVwvb1FYa2k1eFNvcXdOSDU2VFwvbjlTSkpoOEZSd3VzVFBUK2s9IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiIyZWM1MnUzbzMyNDFjZHViNWd1bnQ0dnNjZCIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoic25vdy1wdXJlY2xvdWRcL3JlYWQiLCJhdXRoX3RpbWUiOjE2MDAyNjA4MTQsImlzcyI6Imh0dHBzOlwvXC9jb2duaXRvLWlkcC5ldS1jZW50cmFsLTEuYW1hem9uYXdzLmNvbVwvZXUtY2VudHJhbC0xX2ZEaW9UQzMzYyIsImV4cCI6MTYwMDI2NDQxNCwiaWF0IjoxNjAwMjYwODE0LCJ2ZXJzaW9uIjoyLCJqdGkiOiI5MTEyNWNjMS0zYzYxLTQ0NWItOTI2ZC1jNDZmY2I2ZDMzMzAiLCJjbGllbnRfaWQiOiIyZWM1MnUzbzMyNDFjZHViNWd1bnQ0dnNjZCJ9.LZztVSc1-3jlsyWUlDGOxEJEyVanrWbP6a8Q8TzS089e87_tjSBTAyourx4HdknAAa4iP_cKNnwZQzIYOEBVxAzPJl85s8roJG1BR5KnIfsX_ab0DOUZvC0pCekhefne_VVZrM6F47i2ue7fcoFH69ohKieNxvVkKKWAX0bpUPSsUW4dqS87B6EiVQ_CMDtZD8JPyazwqJRBKoaOddfmPuxMFnxV8Mz2l534XWx1C8596qRSWHPnydK0RXNPyuOnRG--iW5RdVKETxCGruhDYzukrnPAzOI2R5fAaGG5j_e-9jCAD9awxHz6zTCj630GkQnnqkgjgU8g2BWUxdbv2A'
     }),
   }).then(response => response.json())
