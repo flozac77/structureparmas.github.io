@@ -11,13 +11,13 @@
     <script src="Demo.js"></script>
 </head>
 
-<body>
+<body onload="afflist()">
     <br /><br /><br />
     <h2 class="selection">Selectionner une prestation : </h2>
     <br />
     <div class="dropdown">
         <div>
-            <select name="Groups" id="menugroup">
+            <select name="Groups" id="menugroup" onchange="choixTab()">
                 <option value="defaut">Script/Division</option>
                 <option value="G1">G1</option>
                 <option value="G2">G2</option>
@@ -42,7 +42,7 @@
     <br /><br />
     <div class="center-div" style="padding: 0 0 0 200px">
         <button type="button" class="btn btn-primary btn-lg" onclick="creerTable1()" >Reset</button>
-        <button type="button" class="btn btn-primary btn-lg" onclick="msgapply" >Apply</button>
+        <button type="button" class="btn btn-primary btn-lg" onclick="afflist()" >Apply</button>
         <button type="button" class="btn btn-primary btn-lg" onclick="efftable()">Delete</button>
     </div>
     <br />

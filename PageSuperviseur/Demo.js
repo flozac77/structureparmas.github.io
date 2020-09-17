@@ -8,6 +8,14 @@ var infos = {
     Donnee4: 0
 }
 
+var ztext;
+var att;
+
+var list = [
+    { "Flow": "TestFlo", "Division": "UDJ", "Valeur": "serveur HS", "TypeInfo": "chaine", "Nom ": "MsgBiblio", "DisplayName": "message Bibliotech", "Commentaire": "test commentaire" },
+    { "Flow": "TestLiesse", "Division": "UDJ", "Valeur": "serveur HS2", "TypeInfo": "chaine", "Nom": "MsgBiblio2", "DisplayName": "message2 Bibliotech2", "Commentaire": "test2 commentaire2" },
+];
+
 
 function efftable() {
 
@@ -43,11 +51,19 @@ function choixTab() {
     let choix = document.getElementById('menugroup').value;
     console.log("c'est le " + choix);
     if (choix == "G1") {
-        creerTable1();
+        ztext = list[0].DisplayName;
+        att = list[0].Division;
+        console.log(ztext);
+        console.log(att);
     }
     else {
-        creerTable2();
+        ztext = list[1].DisplayName;
+        att = list[1].Division;
+        console.log(ztext);
+        console.log(att);
     }
+
+    afflist();
 
 }
 
@@ -56,41 +72,27 @@ function msgapply() {
     message.innerHTML ="Modifications applied with success !";
     
 }
-/*
-var myHeaders = new Headers();
-myHeaders.append("Authorization", "Bearer eyJraWQiOiJ4RGYxTzBlQVwvb1FYa2k1eFNvcXdOSDU2VFwvbjlTSkpoOEZSd3VzVFBUK2s9IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiIyZWM1MnUzbzMyNDFjZHViNWd1bnQ0dnNjZCIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoic25vdy1wdXJlY2xvdWRcL3JlYWQiLCJhdXRoX3RpbWUiOjE2MDAyNjA4MTQsImlzcyI6Imh0dHBzOlwvXC9jb2duaXRvLWlkcC5ldS1jZW50cmFsLTEuYW1hem9uYXdzLmNvbVwvZXUtY2VudHJhbC0xX2ZEaW9UQzMzYyIsImV4cCI6MTYwMDI2NDQxNCwiaWF0IjoxNjAwMjYwODE0LCJ2ZXJzaW9uIjoyLCJqdGkiOiI5MTEyNWNjMS0zYzYxLTQ0NWItOTI2ZC1jNDZmY2I2ZDMzMzAiLCJjbGllbnRfaWQiOiIyZWM1MnUzbzMyNDFjZHViNWd1bnQ0dnNjZCJ9.LZztVSc1-3jlsyWUlDGOxEJEyVanrWbP6a8Q8TzS089e87_tjSBTAyourx4HdknAAa4iP_cKNnwZQzIYOEBVxAzPJl85s8roJG1BR5KnIfsX_ab0DOUZvC0pCekhefne_VVZrM6F47i2ue7fcoFH69ohKieNxvVkKKWAX0bpUPSsUW4dqS87B6EiVQ_CMDtZD8JPyazwqJRBKoaOddfmPuxMFnxV8Mz2l534XWx1C8596qRSWHPnydK0RXNPyuOnRG--iW5RdVKETxCGruhDYzukrnPAzOI2R5fAaGG5j_e-9jCAD9awxHz6zTCj630GkQnnqkgjgU8g2BWUxdbv2A");
-myHeaders.append("Content-Type", "Access-Control-Allow-Origin'");
-myHeaders.append("Cookie", "NID=204=DQYaPwBRuw9ccHkQKIXtI7buPFKMuYkCKFCMp-AWc9MGqhsoEjCPOlCNR1apRgWFlTJtnuqUStLNI_p7Ce74gJjWfkahjh-bC-uFRonmPmIVrX6IpkH3fGWk2_ZV2nDfWo0XHHms_jt2ER_ZQMXkHAUDYtnAUyyE5x7uKYrOOz4");
 
-var requestOptions = {
-    method: 'POST',
-    headers: myHeaders,
-    redirect: 'follow'
-};
 
-fetch("https://rltq36v83k.execute-api.eu-central-1.amazonaws.com/Integration/incident-masse", requestOptions)
-    .then(response => response.text())
-    .then(result => console.log(result))
-    .catch(error => console.log('error', error));
-*/
-const proxyurl = "https://cors-anywhere.herokuapp.com/";
-const url = "https://rltq36v83k.execute-api.eu-central-1.amazonaws.com/Integration/incident-masse"; // site that doesn’t send Access-Control-*
-fetch( url, {
-    method: 'post',
+postRequest('https://rltq36v83k.execute-api.eu-central-1.amazonaws.com/Integration/incident-masse', {user: 'Krunal'})
+  .then(data => console.log(data)) // Result from the `response.json()` call
+  .catch(error => console.error(error))
+
+function postRequest(url, data) {
+  return fetch(url, {
+    method: 'POST', // 'GET', 'PUT', 'DELETE', etc.
+    body: JSON.stringify(data), // Coordinate the body type with 'Content-Type'
     headers: new Headers({
-        'Authorization': 'Bearer eyJraWQiOiJ4RGYxTzBlQVwvb1FYa2k1eFNvcXdOSDU2VFwvbjlTSkpoOEZSd3VzVFBUK2s9IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiIyZWM1MnUzbzMyNDFjZHViNWd1bnQ0dnNjZCIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoic25vdy1wdXJlY2xvdWRcL3JlYWQiLCJhdXRoX3RpbWUiOjE2MDAyNjIyNjUsImlzcyI6Imh0dHBzOlwvXC9jb2duaXRvLWlkcC5ldS1jZW50cmFsLTEuYW1hem9uYXdzLmNvbVwvZXUtY2VudHJhbC0xX2ZEaW9UQzMzYyIsImV4cCI6MTYwMDI2NTg2NSwiaWF0IjoxNjAwMjYyMjY1LCJ2ZXJzaW9uIjoyLCJqdGkiOiI0ODQwNDUzYi0yMWQ0LTRmMTMtODJhMC1lYWQ5Yzg4OTE0ZjgiLCJjbGllbnRfaWQiOiIyZWM1MnUzbzMyNDFjZHViNWd1bnQ0dnNjZCJ9.gcLhsrYahWqRU63str4YUcgx2KMkJxvRwQzPh5ZbZC8uYZSUIqqQ4I50ng4cZa1knxqH9tsSNePiAPlf97B3iDKhBc1i6233TSgh3dd-KuJ0jYNLvzRcFAdvuM7Kifxb5EQJI3dVqJERGvbWJKts5KN0zi12x6Kd9NrExKWdBfPZj9f-I4dlsGnEcpz1mJ-Pk6l29QAF6vmN8cJ2PZeKlA9WMzMrE6Vx4-tzBlM9nbcR_zFkYjlIYhzjxpjxPiXElDEq7d-kl2jmTYcm-5Kvo9W9ZEUtNaLd02u59Z58i8g0IzoELxe2vq-fFVIhuqw9udNGi_SuOuMipE9q9AmAsg',
-        'Content-Type': 'application/x-www-form-urlencoded'
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': 'https://rltq36v83k.execute-api.eu-central-1.amazonaws.com/',
+      'Authorization': 'Bearer eyJraWQiOiJ4RGYxTzBlQVwvb1FYa2k1eFNvcXdOSDU2VFwvbjlTSkpoOEZSd3VzVFBUK2s9IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiIyZWM1MnUzbzMyNDFjZHViNWd1bnQ0dnNjZCIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoic25vdy1wdXJlY2xvdWRcL3JlYWQiLCJhdXRoX3RpbWUiOjE2MDAyNjA4MTQsImlzcyI6Imh0dHBzOlwvXC9jb2duaXRvLWlkcC5ldS1jZW50cmFsLTEuYW1hem9uYXdzLmNvbVwvZXUtY2VudHJhbC0xX2ZEaW9UQzMzYyIsImV4cCI6MTYwMDI2NDQxNCwiaWF0IjoxNjAwMjYwODE0LCJ2ZXJzaW9uIjoyLCJqdGkiOiI5MTEyNWNjMS0zYzYxLTQ0NWItOTI2ZC1jNDZmY2I2ZDMzMzAiLCJjbGllbnRfaWQiOiIyZWM1MnUzbzMyNDFjZHViNWd1bnQ0dnNjZCJ9.LZztVSc1-3jlsyWUlDGOxEJEyVanrWbP6a8Q8TzS089e87_tjSBTAyourx4HdknAAa4iP_cKNnwZQzIYOEBVxAzPJl85s8roJG1BR5KnIfsX_ab0DOUZvC0pCekhefne_VVZrM6F47i2ue7fcoFH69ohKieNxvVkKKWAX0bpUPSsUW4dqS87B6EiVQ_CMDtZD8JPyazwqJRBKoaOddfmPuxMFnxV8Mz2l534XWx1C8596qRSWHPnydK0RXNPyuOnRG--iW5RdVKETxCGruhDYzukrnPAzOI2R5fAaGG5j_e-9jCAD9awxHz6zTCj630GkQnnqkgjgU8g2BWUxdbv2A'
     }),
-    body: ''
-}) // https://cors-anywhere.herokuapp.com/https://example.com
-    .then(response => response.text())
-    .then(contents => console.log(contents))
-    .catch(() => console.log("Can’t access " + url + " response. Blocked by browser?"))
+  }).then(response => response.json())
+}
 
 
 
-
-
-
-
-
+function afflist() {
+    document.getElementById('msgtexte').value = ztext;
+    document.getElementById('debor').value = att;
+}
