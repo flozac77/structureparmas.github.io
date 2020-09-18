@@ -74,21 +74,28 @@ function msgapply() {
 }
 
 
-postRequest('https://rltq36v83k.execute-api.eu-central-1.amazonaws.com/Integration/incident-masse', {user: 'Krunal'})
-  .then(data => console.log(data)) // Result from the `response.json()` call
-  .catch(error => console.error(error))
+var myHeaders = new Headers();
+myHeaders.append("Authorization", "Bearer eyJraWQiOiJ4RGYxTzBlQVwvb1FYa2k1eFNvcXdOSDU2VFwvbjlTSkpoOEZSd3VzVFBUK2s9IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiIyZWM1MnUzbzMyNDFjZHViNWd1bnQ0dnNjZCIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoic25vdy1wdXJlY2xvdWRcL3JlYWQiLCJhdXRoX3RpbWUiOjE2MDA0Mzk2MzMsImlzcyI6Imh0dHBzOlwvXC9jb2duaXRvLWlkcC5ldS1jZW50cmFsLTEuYW1hem9uYXdzLmNvbVwvZXUtY2VudHJhbC0xX2ZEaW9UQzMzYyIsImV4cCI6MTYwMDQ0MzIzMywiaWF0IjoxNjAwNDM5NjMzLCJ2ZXJzaW9uIjoyLCJqdGkiOiIyNjE0OGM1Ny0wNjBmLTQwZDEtYjUwNC05ZGZmZWI1NTgwMTUiLCJjbGllbnRfaWQiOiIyZWM1MnUzbzMyNDFjZHViNWd1bnQ0dnNjZCJ9.cBvh4RnKvWQGVTFxh3VZsAbWc38Ss7AAIntk0HgqHwzeRxA58YFTMIr9tCe_Ysri7xw1neUWMxN1H3KSnyuCG_vnzvCvNrEtxyEw00tH3QRVpK7nzgcTu7HcFcKtgn-BqNV3prHedKayDiGI68KYTC7qonKp3i56JSio3LBH7i_3Q5rUWMbmVM9P0Wzxh4zBEwjm4SNBhEdMU1873u-h9lK1Cr6caw4V7l2lUyrfREGsTehWq6KWCSLCCZKxcqg0jV29P3ceUhhf97j1sLc6w1-5k-jXXiiaN0CI0VBC_yUGdujbm9AIWafWTnnxO9VKtbeFBK4wiHAgLyY4nQ1I0g");
+myHeaders.append("Content-Type", "application/json;charset=UTF-8");
+myHeaders.append("Origin", "rltq36v83k.execute-api.eu-central-1.amazonaws.com");
 
-function postRequest(url, data) {
-  return fetch(url, {
-    method: 'POST', // 'GET', 'PUT', 'DELETE', etc.
-    body: JSON.stringify(data), // Coordinate the body type with 'Content-Type'
-    headers: new Headers({
-      'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': 'https://rltq36v83k.execute-api.eu-central-1.amazonaws.com/',
-      'Authorization': 'Bearer eyJraWQiOiJ4RGYxTzBlQVwvb1FYa2k1eFNvcXdOSDU2VFwvbjlTSkpoOEZSd3VzVFBUK2s9IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiIyZWM1MnUzbzMyNDFjZHViNWd1bnQ0dnNjZCIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoic25vdy1wdXJlY2xvdWRcL3JlYWQiLCJhdXRoX3RpbWUiOjE2MDAyNjA4MTQsImlzcyI6Imh0dHBzOlwvXC9jb2duaXRvLWlkcC5ldS1jZW50cmFsLTEuYW1hem9uYXdzLmNvbVwvZXUtY2VudHJhbC0xX2ZEaW9UQzMzYyIsImV4cCI6MTYwMDI2NDQxNCwiaWF0IjoxNjAwMjYwODE0LCJ2ZXJzaW9uIjoyLCJqdGkiOiI5MTEyNWNjMS0zYzYxLTQ0NWItOTI2ZC1jNDZmY2I2ZDMzMzAiLCJjbGllbnRfaWQiOiIyZWM1MnUzbzMyNDFjZHViNWd1bnQ0dnNjZCJ9.LZztVSc1-3jlsyWUlDGOxEJEyVanrWbP6a8Q8TzS089e87_tjSBTAyourx4HdknAAa4iP_cKNnwZQzIYOEBVxAzPJl85s8roJG1BR5KnIfsX_ab0DOUZvC0pCekhefne_VVZrM6F47i2ue7fcoFH69ohKieNxvVkKKWAX0bpUPSsUW4dqS87B6EiVQ_CMDtZD8JPyazwqJRBKoaOddfmPuxMFnxV8Mz2l534XWx1C8596qRSWHPnydK0RXNPyuOnRG--iW5RdVKETxCGruhDYzukrnPAzOI2R5fAaGG5j_e-9jCAD9awxHz6zTCj630GkQnnqkgjgU8g2BWUxdbv2A'
-    }),
-  }).then(response => response.json())
-}
+myHeaders.append("Access-Control-Request-Method", "*");
+
+
+
+var raw = "";
+
+var requestOptions = {
+  method: 'POST',
+  headers: myHeaders,
+  body: raw,
+  redirect: 'follow'
+};
+
+fetch("https://rltq36v83k.execute-api.eu-central-1.amazonaws.com/Integration/incident-masse", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
 
 
 
