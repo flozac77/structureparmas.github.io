@@ -77,8 +77,11 @@ function msgapply() {
 var myHeaders = new Headers();
 myHeaders.append("Authorization", "Bearer eyJraWQiOiJ4RGYxTzBlQVwvb1FYa2k1eFNvcXdOSDU2VFwvbjlTSkpoOEZSd3VzVFBUK2s9IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiIyZWM1MnUzbzMyNDFjZHViNWd1bnQ0dnNjZCIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoic25vdy1wdXJlY2xvdWRcL3JlYWQiLCJhdXRoX3RpbWUiOjE2MDA2NzYzMjEsImlzcyI6Imh0dHBzOlwvXC9jb2duaXRvLWlkcC5ldS1jZW50cmFsLTEuYW1hem9uYXdzLmNvbVwvZXUtY2VudHJhbC0xX2ZEaW9UQzMzYyIsImV4cCI6MTYwMDY3OTkyMSwiaWF0IjoxNjAwNjc2MzIxLCJ2ZXJzaW9uIjoyLCJqdGkiOiI5NWMzYTU5OS03MjIzLTQxMWItYTUyMi0yZGQ1NjcwMGIzYTUiLCJjbGllbnRfaWQiOiIyZWM1MnUzbzMyNDFjZHViNWd1bnQ0dnNjZCJ9.dE0yiK7xwu6DxXRirXucD-tvDTNZ6e3nyg303yq_yGip6eHjWdocNO26C8-wItKr0v_zCitJPotolRaGr8ei-ymSWoYxIQlf2H9bIKOjuJpqcH-ApfedVQGyn2WNB44dLe7cSebad7fmTlHbXWz4TxK5yWb7Hjt4AKwtapHqR5ESNuyeW2PntXaNlnYBH4UF3MjXyEjG3ywnEcHXs-ExNngTwPnI8kgEJvaS5_PTPc-7ZMBjG9_rbBVIJ1S-i-fY5rtGYoefBMkiMq_afClC98vA88sLAVEFuWxdMG5RbEwlNROv5hMfpiPVHkqK8bjjPCdDD56n2FW6OA3-yTFF_g");
 myHeaders.append("Content-Type", "application/json;charset=UTF-8");
+myHeaders.append("Origin", "rltq36v83k.execute-api.eu-central-1.amazonaws.com");
 
-
+myHeaders.append("Access-Control-Request-Method", "*");
+myHeaders.append("Access-Control-Allow-Origin", "https://*");
+myHeaders.append("Access-Control-Allow-Credentials", "true");
 
 
 var raw = "";
