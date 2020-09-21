@@ -80,6 +80,7 @@ myHeaders.append("Content-Type", "application/json;charset=UTF-8");
 myHeaders.append("Origin", "rltq36v83k.execute-api.eu-central-1.amazonaws.com");
 
 myHeaders.append("Access-Control-Request-Method", "*");
+myHeaders.append("Access-Control-Allow-Origin", "*");
 
 
 
